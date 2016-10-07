@@ -1,17 +1,16 @@
 <html>
-  <body style="background-color:#f0e6ff;">
+  <body background="http://data.whicdn.com/images/225089317/large.gif">>
 
   <style>
     li{ list-style-type: none;
       }
   </style>
   <title>99 Cats - for all your cat renting needs</title>
-  <center><img src="https://s-media-cache-ak0.pinimg.com/originals/4c/f1/9a/4cf19a7cb9c711dade0e394e0321cdd5.gif" height="200px" width="auto">
 
   <center><h1 style="color:purple;">99 Cats - Book Your Favorite Cat 2Day!</h1></center>
 
   <nav>
-  <center><h3 style="color:purple">Available Cats</h3>
+  <center><h2 style="color:purple">🐱 Available Cats 🐱</h2>
   <ul><% @cats.each do |cat| %>
     <li><%= link_to "#{cat.name}", cat_url(cat) %></li>
         <% end %>
@@ -19,6 +18,6 @@
   </center>
   </nav>
   <br>
-  <center><%= link_to "Add Cat!", new_cat_url %></center>
+  <center><%= link_to "➕ Add Cat!", new_cat_url %></center>
 </body>
 </html>
