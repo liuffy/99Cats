@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title><%= @cat.name %>'s Profile</title>
+<%= link_to "<< Back to all cats", cats_url %>
+<center><%= link_to "✍ Edit cat's profile", edit_cat_url(@cat) %></center>
+  <center><h1 style="color:purple;"><%= @cat.name %>'s Profile</h1></center>
+  <center><img src="http://i.imgur.com/Y8PIcM4.gif" width="370" height="auto" border="1px"></center>
+
+  <style>
+  table, th, td {
+      border: 1px solid purple;
+      border-collapse: collapse;
+    background-color: #e6e6ff}
+  </style>
+  </head>
+
+<center><table cellpadding="15">
+  <tr>
+    <th>Name:</th>
+    <td><%= @cat.name%></td>
+  </tr>
+
+  <tr>
+    <th>Age:</th>
+    <td><%= @cat.age %></td>
+  </tr>
+
+  <tr>
+    <th>Color:</th>
+    <td><%= @cat.color %></td>
+  </tr>
+
+  <tr>
+    <th>Sex:</th>
+    <td><%= @cat.sex %></td>
+  </tr>
+
+  <tr>
+    <th>Description:</th>
+    <td><%= @cat.description %></td>
+  </tr>
+</table></center>
+
+
+</html>
