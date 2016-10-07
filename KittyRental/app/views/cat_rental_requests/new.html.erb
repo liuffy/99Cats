@@ -5,7 +5,8 @@
   <%= link_to "<< Back to all cats", cats_url %>
 
 <center><h2>Rental Request Form</h2>
-  <form action = "cat_rental_requests_url" method="post">
+  <form action="<%= cat_rental_requests_url %>" method="post">
+
 <!-- CHOOSE CAT -->
   <label for="cat_selection">Select cat:</label>
   <select name="cat_rental_request[cat_id]" id="cat_selection">

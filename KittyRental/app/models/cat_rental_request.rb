@@ -10,19 +10,14 @@ class CatRentalRequest < ActiveRecord::Base
     validate :does_not_overlap_approved_request
 
     def approve!
-      raise "not pending" unless self.status == "PENDING"
-      transaction do
+      CatRentalRequest.transaction do
         self.status = "APPROVED"
-        self.save!
+        self.save! # save the model
 
         # when we approve this request, we reject all other overlapping
         # requests for this cat.
-        overlapping_pending_requests.update_all(status: 'DENIED')
+        overlapping_pending_requests.update_all(status: 'DENIED') ## update_all updates all records
       end
-    end
-
-    def approved?
-      self.status == "APPROVED"
     end
 
     def denied?
